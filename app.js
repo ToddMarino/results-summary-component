@@ -4,7 +4,7 @@ const percentage = document.querySelector('.percent');
 const resultsElement = document.querySelector('.results');
 
 let results = [];
-let sum = 0
+let sum = 0;
 
 function displayResults() {
   results.forEach((result) => {
@@ -39,16 +39,18 @@ function addClassestoResults({ category }) {
 }
 
 continueBtn.addEventListener('click', async function () {
+  continueBtn.disabled = false;
   const response = await fetch('./data.json');
-  const data = await response.json()
-  results = data
+  const data = await response.json();
+  results = data;
 
+  results.forEach((result) => {
+    sum += result.score;
+  });
 
-    results.forEach(result => {
-      sum += result.score
-    })
-    
-    displayResults();
-    let percent = (sum / 400)*100
-    percentage.textContent = Math.round(percent)
+  displayResults();
+  let percent = (sum / 400) * 100;
+  percentage.textContent = Math.round(percent);
+
+  continueBtn.disabled = true;
 });
