@@ -38,12 +38,11 @@ function addClassestoResults({ category }) {
   }
 }
 
-continueBtn.addEventListener('click', function () {
-  fetch('./data.json')
-    .then((response) => response.json())
-    .then((data) => {
-      results = data;
-    });
+continueBtn.addEventListener('click', async function () {
+  const response = await fetch('./data.json');
+  const data = await response.json()
+  results = data
+
 
     results.forEach(result => {
       sum += result.score
