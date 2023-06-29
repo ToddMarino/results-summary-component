@@ -1,0 +1,239 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: 'Hanken Grotesk', sans-serif;
+
+  /* colors */
+  --color-Light-red: hsla(0, 100%, 67%);
+  --color-Orangey-yellow: hsla(39, 100%, 56%);
+  --color-Green-teal: hsla(166, 100%, 37%);
+  --color-Cobalt-blue: hsla(234, 85%, 45%);
+  --color-Cobalt-blue-alpha: hsla(234, 85%, 45%, 0.15);
+
+  --color-White: hsla(0, 0%, 100%);
+  --color-Pale-blue: hsla(221, 100%, 96%);
+  --color-Light-lavender: hsla(241, 100%, 89%);
+  --color-Dark-gray-blue: hsla(224, 30%, 27%);
+
+  /* gradients */
+  --gradient-linear: linear-gradient(
+    180deg,
+    hsl(242deg 100% 67%),
+    hsl(241deg 81% 54%)
+  );
+
+  --gradient-circular: linear-gradient(
+    180deg,
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 530px;
+  height: 365px;
+  border-radius: 20px;
+  box-shadow: 15px 16px 17px 0px var(--color-Cobalt-blue-alpha);
+  display: flex;
+  overflow: hidden;
+}
+
+.left-side {
+  background: var(--gradient-linear);
+  border-radius: 20px;
+}
+
+.card {
+  width: 265px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 20px;
+}
+
+.left-side h3 {
+  color: var(--color-Light-lavender);
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.right-side h3 {
+  color: var(--color-Dark-gray-blue);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--gradient-circular);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.percent {
+  color: var(--color-White);
+  font-size: 55px;
+  font-weight: 800;
+}
+
+.circle p {
+  color: var(--color-Light-lavender);
+  opacity: 0.8;
+}
+
+.left-subtitle {
+  font-weight: 700;
+  color: var(--color-Pale-blue);
+  font-size: 26px;
+}
+
+.left-description {
+  font-size: 14px;
+  color: var(--color-Light-lavender);
+  display: inline-block;
+  width: 75%;
+  text-align: center;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 10px;
+  border-radius: 8px;
+}
+
+.result-title {
+  display: flex;
+  align-items: center;
+}
+
+.result span {
+  color: var(--color-Dark-gray-blue);
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.bg-red {
+  background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.bg-orange {
+  background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.bg-green {
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.bg-blue {
+  background-color: hsla(234, 85%, 45%, 0.15);
+}
+
+.red {
+  color: var(--color-Light-red);
+}
+.orange {
+  color: var(--color-Orangey-yellow);
+}
+.green {
+  color: var(--color-Green-teal);
+}
+.blue {
+  color: var(--color-Cobalt-blue);
+}
+.grey {
+  color: hsla(224, 30%, 27%, 0.6);
+  font-weight: 400;
+}
+
+.right-side > h3 {
+  align-self: flex-start;
+  padding-left: 25px;
+}
+
+.result img {
+  padding-right: 8px;
+}
+
+button {
+  text-decoration: none;
+  color: var(--color-White);
+  font-size: 16px;
+  background-color: var(--color-Dark-gray-blue);
+  display: inline-block;
+  width: 80%;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-Cobalt-blue);
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 0;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+  }
+
+  .left-side {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0px;
+  }
+
+  .right-side {
+    min-height: 400px;
+  }
+
+  .card {
+    width: 265px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 20px;
+  }
+}
